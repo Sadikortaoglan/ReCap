@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Core.Entities.Concrete;
 using Entities.Concrete;
 
 namespace Business.Constans
@@ -46,5 +47,14 @@ namespace Business.Constans
         public static string UserDeleted = "Kullanıcı silindi";
         public static string UserListed = "Kullanıcı listelendi";
         public static string UserUpdated = "Kullanıcı Güncellendi";
+
+
+        public static string AuthorizationDenied = "Giriş Engellendi.";
+        public static string UserAlreadyExists = "";
+        public static string AccessTokenCreated = "";
+        public static string SuccessfulLogin = "Başarılı Giriş";
+        public static string PasswordError = "Yanlış şifre";
+        public static string UserNotFound = "Kullanıcı bululnamadı";
+        public static string UserRegistered = "Kullanıcı kaydedildi";
     }
 }
