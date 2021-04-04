@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
-using System.Text;
-using Castle.Core.Configuration;
 using Core.Entities.Concrete;
 using Core.Extensions;
+using Core.Utilities.Security.Encryption;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Core.Utilities.Security.JWT
