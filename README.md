@@ -1,6 +1,6 @@
 # ReCapProject - Araç Kiralama Sistemi
 
-Proje katmanlı mimariye uygun şekilde tasarlanıp OOP olarak Entity Framework kullanılmaktadır.IoC prensibi ve SOLID ilkeleri ile geliştirilmeye devam ediyor.AutoFac ve FluentValidation paketleri kullanılıyor.Projede web api kullanılmaktadır.
+Proje katmanlı mimariye uygun bir şekilde tasarlanıp, OOP olarak Entity Framework kullanılmıştır.IoC prensibi ve SOLID ilkeleri ile geliştirilmeye devam ediliyor.AutoFac ve FluentValidation paketleri kullanılıyor.Projede web api kullanılmaktadır.
 
 ## Proje Katmanları
 
