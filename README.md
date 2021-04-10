@@ -2,16 +2,16 @@
 
 Proje katmanlı mimariye uygun şekilde tasarlanıp OOP olarak Entity Framework kullanılmaktadır.IoC prensibi ve SOLID ilkeleri ile geliştirilmeye devam ediyor.AutoFac ve FluentValidation paketleri kullanılıyor.Projede web api kullanılmaktadır.
 
-## Proje Katmanları
+* ## Proje Katmanları
 
-### Entities Layer(.Net Standart)
+* ### Entities Layer(.Net Standart)
 Veritabanı nesneleri için oluşturulmuş Entities Katmanı'nda Abstract ve Concrete olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.
 
-### Business Layer(.Net Standart)
+* ### Business Layer(.Net Standart)
 Sunum katmanından gelen bilgileri gerekli koşullara göre işlemek veya denetlemek için oluşturulan Business Katmanı'nda Abstract,Concrete,Utilities ve ValidationRules olmak üzere dört adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.Utilities ve ValidationRules klasörlerinde validation işlemlerinin gerçekleştiği classlar mevcuttur.
 
 
-### Data Access(.Net Standart)
+* ### Data Access(.Net Standart)
 Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan Data Access Katmanı'nda Abstract ve Concrete olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.
 
 ### Core Layer(.Net Standart)
