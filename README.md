@@ -31,4 +31,9 @@ Microsoft.EntityFrameworkCore.SqlServer Version="3.1.1"
 Microsoft.IdentityModel.Tokens Version="6.8.0"
 System.IdentityModel.Tokens.Jwt Version="6.8.0"
 
+ - [ ] EntityFrameworkCore.SqlServer 3.1.11
+ - [ ]  FluentValidation 7.3.3
+ - [ ] Autofac 6.1.0
+ - [ ] Autofac.Extensions.DependencyInjection 7.1.0
+ - [ ] Autofac.Extras.DynamicProxy 6.0.0 
 
