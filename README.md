@@ -20,20 +20,14 @@ Dikkat!!!
 Core Katmanı, diğer katmanları referans almaz.
 
 Nuget
-Autofac Version="6.1.0"
-Autofac.Extensions.DependencyInjection Version="7.1.0"
-Autofac.Extras.DynamicProxy Version="6.0.0"
-FluentValidation Version="9.5.1"
-Microsoft.AspNetCore.Http Version="2.2.2"
-Microsoft.AspNetCore.Http.Features Version="5.0.3"
-Microsoft.AspNetCore.Http.Abstractions Version="2.2.0"
-Microsoft.EntityFrameworkCore.SqlServer Version="3.1.1"
-Microsoft.IdentityModel.Tokens Version="6.8.0"
-System.IdentityModel.Tokens.Jwt Version="6.8.0"
-
- - [ ] EntityFrameworkCore.SqlServer 3.1.11
- - [ ]  FluentValidation 7.3.3
- - [ ] Autofac 6.1.0
- - [ ] Autofac.Extensions.DependencyInjection 7.1.0
- - [ ] Autofac.Extras.DynamicProxy 6.0.0 
+- [ ] Autofac Version="6.1.0"
+- [ ] Autofac.Extensions.DependencyInjection Version="7.1.0"
+- [ ] Autofac.Extras.DynamicProxy Version="6.0.0"
+- [ ] FluentValidation Version="9.5.1"
+- [ ] Microsoft.AspNetCore.Http Version="2.2.2"
+- [ ] Microsoft.AspNetCore.Http.Features Version="5.0.3"
+- [ ] Microsoft.AspNetCore.Http.Abstractions Version="2.2.0"
+- [ ] Microsoft.EntityFrameworkCore.SqlServer Version="3.1.1"
+- [ ] Microsoft.IdentityModel.Tokens Version="6.8.0"
+- [ ] System.IdentityModel.Tokens.Jwt Version="6.8.0"
 
