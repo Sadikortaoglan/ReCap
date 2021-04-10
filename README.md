@@ -18,7 +18,9 @@ Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan Data Access Kat
 
 Bir framework katmanı olan Core Katmanı'nda DataAccess, Entities, Utilities olmak üzere 3 adet klasör bulunmaktadır.DataAccess klasörü DataAccess Katmanı ile ilgili nesneleri, Entities klasörü Entities katmanı ile ilgili nesneleri tutmak için oluşturulmuştur. Core katmanının .Net Core ile hiçbir bağlantısı yoktur.Oluşturulan core katmanında ortak kodlar tutulur. Core katmanı ile, kurumsal bir yapıda, alt yapı ekibi ilgilenir.
 
-**Dikkat!!!**
+### WebAPI
+
+**Dikkat!!!** 
 Core Katmanı, diğer katmanları referans almaz.
 
 Nuget
