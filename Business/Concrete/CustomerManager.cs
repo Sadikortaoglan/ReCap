@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constans;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Performance;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Result;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -18,8 +23,9 @@ namespace Business.Concrete
        {
            _customerDal = customerDal;
        }
+       [CacheAspect]
 
-       public IDataResult<List<Customer>> GetAll()
+        public IDataResult<List<Customer>> GetAll()
         {
             if (DateTime.Now.Hour==00)
             {
@@ -29,7 +35,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.CustomerListed);
         }
 
-       public IDataResult<Customer> GetById(int customerId)
+       [CacheAspect]
+       [PerformanceAspect(5)]
+        public IDataResult<Customer> GetById(int customerId)
        {
 
            if (DateTime.Now.Hour == 00)
@@ -39,7 +47,10 @@ namespace Business.Concrete
 
            return new SuccessDataResult<Customer>(_customerDal.Get(customer => customer.UserId == customerId));
        }
-       public IResult Add(Customer customer)
+       [ValidationAspect(typeof(CustomerValidator))]
+       [CacheRemoveAspect("ICustomerService.Get")]
+       [SecuredOperation("Customer.Add")]
+        public IResult Add(Customer customer)
         {
             if (customer.CompanyName.Length<=4)
             {
@@ -48,13 +59,13 @@ namespace Business.Concrete
             _customerDal.Add(customer);
             return new SuccessResult(Messages.CustomerAdded);
         }
-
+        [SecuredOperation("Customer.Update")]
         public IResult Update(Customer customer)
         {
            _customerDal.Update(customer);
            return new SuccessResult(Messages.CustomerUpdated);
         }
-
+        [SecuredOperation("Customer.Delete")]
         public IResult Delete(Customer customer)
         {
             _customerDal.Delete(customer);

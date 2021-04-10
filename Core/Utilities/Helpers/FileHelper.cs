@@ -76,9 +76,9 @@ namespace Core.Utilities.Helpers
             string fileExtension = fileInfo.Extension;
             var newPath = Guid.NewGuid() + fileExtension;
 
-            string path = Environment.CurrentDirectory + @"\wwwroot\uploads";
+            string path = Environment.CurrentDirectory + @"\wwwroot\images";
             string result= $@"{path}\{newPath}";
-            return (result, $"\\uploads\\{newPath}");
+            return (result, $"\\images\\{newPath}");
 
 
         }

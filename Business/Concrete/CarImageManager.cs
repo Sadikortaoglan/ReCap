@@ -5,7 +5,12 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constans;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Performance;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.BusinessRules;
 using Core.Utilities.Helpers;
 using Core.Utilities.Result;
@@ -24,18 +29,13 @@ namespace Business.Concrete
         {
             _carImageDal = carImageDal;
         }
-
-        public IDataResult<List<CarImage>> GetAll(int id)
+        [CacheAspect]
+        public IDataResult<List<CarImage>> GetAll()
         {
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll());
         }
-
-
-        public IDataResult<List<CarImage>> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
+        [CacheAspect]
+       // [PerformanceAspect(5)]
         public IDataResult<CarImage> Get(int Id)
         {
             return new SuccessDataResult<CarImage>(_carImageDal.Get(filter => filter.Id == Id));
@@ -57,7 +57,7 @@ namespace Business.Concrete
             {
                 try
                 {
-                    string path = @"\uploads\default.jpg";
+                    string path = @"\images\default.jpg";
 
                     var result = _carImageDal.GetAll(c => c.CarId == carId).Any();
 
@@ -79,6 +79,8 @@ namespace Business.Concrete
                 return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll(c => c.CarId == carId));
             }
         }
+        // [SecuredOperation("CarImage.Add")]
+        [ValidationAspect(typeof(CarImageValidator))]
 
         public IResult Add(IFormFile file, CarImage carImage)
         {
@@ -93,7 +95,8 @@ namespace Business.Concrete
             _carImageDal.Add(carImage);
             return new SuccessResult();
         }
-
+        [ValidationAspect(typeof(CarImageValidator))]
+        //[SecuredOperation("CarImage.Update")]
         public IResult Update(IFormFile file, CarImage carImage)
         {
             IResult result = BusinessRules.Run(CheckImageLimitExceeded(carImage.CarId));
@@ -120,7 +123,7 @@ namespace Business.Concrete
 
             return new SuccessResult();
         }
-
+        //[SecuredOperation("CarImage.Delete")]
         public IResult Delete(CarImage carImage)
         {
             FileHelper.Delete(carImage.ImagePath);
