@@ -15,8 +15,8 @@ Proje katmanlı mimariye uygun bir şekilde tasarlanıp, OOP olarak Entity Frame
 * Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan Data Access Katmanı'nda Abstract ve Concrete olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut * * * * nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.
 
 * ### Core Layer(.Net Standart)
-* **Dikkat!!!** 
-* Core Katmanı, diğer katmanları referans almaz.
+
+* **Dikkat!!!** Core Katmanı, diğer katmanları referans almaz.
 * Bir framework katmanı olan Core Katmanı'nda DataAccess, Entities, Utilities olmak üzere 3 adet klasör bulunmaktadır.DataAccess klasörü DataAccess Katmanı ile ilgili nesneleri, Entities klasörü Entities katmanı ile ilgili nesneleri tutmak için oluşturulmuştur. Core katmanının .Net Core ile hiçbir bağlantısı yoktur.Oluşturulan core katmanında ortak kodlar tutulur. Core katmanı ile, kurumsal bir yapıda, alt yapı ekibi ilgilenir.
 
 * ### WebAPI
