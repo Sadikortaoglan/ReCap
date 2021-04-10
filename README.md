@@ -5,7 +5,7 @@ Proje katmanlı mimariye uygun şekilde tasarlanıp OOP olarak Entity Framework 
 ## Proje Katmanları
 
 * ### Entities Layer(.Net Standart)
- Veritabanı nesneleri için oluşturulmuş Entities Katmanı'nda Abstract ve Concrete olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü *  somut nesneleri tutmak için oluşturulmuştur.
+* Veritabanı nesneleri için oluşturulmuş Entities Katmanı'nda Abstract ve Concrete olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü *  * somut nesneleri tutmak için oluşturulmuştur.
 
 * ### Business Layer(.Net Standart)
 * Sunum katmanından gelen bilgileri gerekli koşullara göre işlemek veya denetlemek için oluşturulan Business Katmanı'nda Abstract,Concrete,Utilities ve ValidationRules olmak * * * üzere dört adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.Utilities ve ValidationRules klasörlerinde * validation işlemlerinin gerçekleştiği classlar mevcuttur.
