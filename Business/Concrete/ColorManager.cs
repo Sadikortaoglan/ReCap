@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constans;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Caching;
@@ -23,7 +24,7 @@ namespace Business.Concrete
        }
        [ValidationAspect(typeof(ColorValidator))]
        [CacheRemoveAspect("IColorService.Get")]
-       //[SecuredOperation("Color.Add")]
+       [SecuredOperation("Color.Add")]
         public IResult Add(Color color)
         {
             if (color.ColorName.Length<=3)
@@ -33,13 +34,13 @@ namespace Business.Concrete
             _colorDal.Add(color);
             return new SuccessResult(Messages.ColorAdded);
         }
-       // [SecuredOperation("Color.Update")]
+        [SecuredOperation("Color.Update")]
         public IResult Update(Color color)
         {
            _colorDal.Update(color);
            return new SuccessResult(Messages.ColorUpdated);
         }
-        // [SecuredOperation("Color.Delete")]
+        [SecuredOperation("Color.Delete")]
         public IResult Delete(Color color)
         {
            _colorDal.Delete(color);

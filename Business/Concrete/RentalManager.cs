@@ -25,7 +25,7 @@ namespace Business.Concrete
         }
         [ValidationAspect(typeof(RentalValidator))]
         [CacheRemoveAspect("IRentalService.Get")]
-        //[SecuredOperation("Rental.Add")]
+        [SecuredOperation("Rental.Add")]
         public IResult Add(Rental rental)
         {
             if (rental.ReturnDate == null && _rentalDal.GetRentalDetailsById(rental.CarId).Count > 0)

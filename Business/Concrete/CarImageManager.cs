@@ -35,7 +35,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll());
         }
         [CacheAspect]
-       // [PerformanceAspect(5)]
+       [PerformanceAspect(5)]
         public IDataResult<CarImage> Get(int Id)
         {
             return new SuccessDataResult<CarImage>(_carImageDal.Get(filter => filter.Id == Id));
